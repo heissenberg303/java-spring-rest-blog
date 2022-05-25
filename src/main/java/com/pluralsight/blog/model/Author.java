@@ -18,11 +18,25 @@ public class Author {
     private Long id;
     private String firstname;
     private String lastname;
+    @JsonIgnore
     private String username;
+    @JsonIgnore
     private String password;
+
+    @OneToMany
+    private List<Post> post;
 
     public Author() {
         super();
+        post = new ArrayList<>();
+    }
+
+    public List<Post> getPost() {
+        return post;
+    }
+
+    public void setPost(List<Post> post) {
+        this.post = post;
     }
 
     public Author(String username, String firstname, String lastname, String password) {
