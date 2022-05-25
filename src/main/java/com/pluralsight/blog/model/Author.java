@@ -24,19 +24,19 @@ public class Author {
     private String password;
 
     @OneToMany
-    private List<Post> post;
+    private List<Post> posts;
 
     public Author() {
         super();
-        post = new ArrayList<>();
+        posts = new ArrayList<>();
     }
 
     public List<Post> getPost() {
-        return post;
+        return posts;
     }
 
-    public void setPost(List<Post> post) {
-        this.post = post;
+    public void setPost(List<Post> posts) {
+        this.posts = posts;
     }
 
     public Author(String username, String firstname, String lastname, String password) {
@@ -99,10 +99,10 @@ public class Author {
     }
 
     public List<Post> getPosts() {
-        return null;
+        return posts;
     }
 
     public void addPost(Post post) {
-        return;
+        posts.add(post);
     }
 }
